@@ -1,0 +1,35 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    height: 20%;
+    background-color:beige;
+    top: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.logo {
+    display:flex;
+    padding: 5px 5px;
+}
+
+.logo img {
+    width: 60px;
+    height: 40px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+.nav {
+    display:flex;
+    padding-right: 50px;
+    font-weight: bolder;
+    text-decoration: none;
+}
