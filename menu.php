@@ -14,11 +14,11 @@
             <img class="que__img" src="img/meat.jpg" alt="meet">
             <img class="que__img" src="img/fish.jpg" alt="fish">
             <img class="que__img" src="img/veg.jpg" alt="vegetable">
-            <p>Please fill your name in the form and submit!</p>
+            <p>Please fill out the form below and click submit for checking our recommendation!</p>
         <div class="submit">
             <form method="post" action="menu_result.php">
-                <p>Name:<input type="text" name="name"></p>
-                <p><input type="submit" value="Sbumit"></p>
+                <p>Name: <input type="text" name="name"></p>
+                <p><input type="submit" value="Submit"></p>
             </form>
         </div>
     </div>

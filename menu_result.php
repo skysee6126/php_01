@@ -24,12 +24,8 @@ $food = [
 ];
 $num = array_rand ($food, 1); 
 
-echo h($name).'さんには';
-if ($num < 10) {
-    echo '<strong>'.$food[$num].'</strong>';
-}
+echo h($name).'さんには<strong>'.$food[$num].'</strong>がおススメです！';
 
-echo "がおススメです！";
 ?></p>
     <div class="result__img">
     <img src='img/<?php echo $num ?>.jpg'>
