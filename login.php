@@ -4,42 +4,44 @@
     <body> 
     <div class="tittle">
         <h2>Login</h2>
+        <p>会員専用ページにアクセスするためにはログインをしてください。</p>
     </div>
     <div class="content">
         <form method="POST" action="loginProcess.php"> 
-        <div class="w-50 ml-auto mr-auto mt-5">
-            <div class="mb-3 ">
-                <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="id">
+        <div class="form">
+            <div class="form-email ">
+                <label>Email：</label>
+                <input name="email" type="text" placeholder="email">
             </div>
-            <div class="mb-3 ">
-                <label for="exampleFormControlInput1" class="form-label">Password</label>
-                <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="password">
+            <div class="form-password">
+                <label>Password：</label>
+                <input name="password" type="password" placeholder="password">
             </div>
         
-            <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+            <button type="submit" class="submit">ログイン</button>
         </div>
         </form>
         <div class="signup">
-        <p>まだないならこちらで<a class="signup__btn" href="#">会員登録</a>しませんか？</p>
+        <p>まだ登録されてない方はこちらで<a class="signup__btn" href="#">会員登録</a>しませんか？</p>
         </div>
     <!-- modal -->
     <div class="signup__form">
     <form action="signupProcess.php" method="POST" id="signup-form">
-        <div class="w-50 ml-auto mr-auto mt-5">
-        <div class="mb-3 ">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="メールアドレスを記入してください">
+
+    <div class="form">
+            <div class="form-email ">
+                <label>Email：</label>
+                <input name="email" type="text" placeholder="メールアドレスを記入">
             </div>
-            <div class="mb-3 ">
-                <label for="password" class="form-label">Password</label>
-                <input name="password" type="password" class="form-control" id="password" placeholder="パスワードを記入してください">
+            <div class="form-password">
+                <label>Password：</label>
+                <input name="password" type="password" placeholder="パスワードを記入">
             </div>
-            <div class="mb-3 ">
-                <label for="passwordCheck" class="form-label">Confirm password</label>
-                <input type="password" class="form-control" id="password-check" placeholder="パスワードを記入してください">
+            <div class="form-cpassword">
+                <label>Confirm Password：</label>
+                <input name="passwordCheck" type="password" placeholder="パスワードを記入">
             </div>
-            <button type="button" id="signup-button" class="btn btn-primary mb-3">会員登録</button>
+            <button type="submit" class="submit">会員登録</button>
         </div>
     </form>
     </div>
@@ -61,7 +63,7 @@
                 
             signupForm.submit();
             }else{
-                alert("パスワードが一致しません。もう一度やり直してください。");
+                alert("パスワードが一致しません。もう一度やり直。");
             }
         });
     </script>

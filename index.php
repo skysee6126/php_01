@@ -1,7 +1,7 @@
 
 <?php 
 
-$greeting = '<p>本日はこれでいかがですか？</p>';
+session_start();
 require_once 'views/content.tpl.php';
 
 ?>

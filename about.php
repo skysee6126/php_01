@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang='ja'>
     <?php include('views/header.inc.php'); ?>
@@ -7,13 +8,13 @@
     </div>
     <div class="content">
         <div class="explain">
-            <p></p>
+            <p>설명</p>
         </div>
         <div class="business">
-            <p></p>
+            <p>비즈니스</p>
         </div>
         <div class="partner">
-            <p></p>
+            <p>파트너</p>
         </div>
     </div>
         <?php include('views/footer.inc.php'); ?>
