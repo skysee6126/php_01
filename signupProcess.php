@@ -12,7 +12,7 @@ echo $sql;
 $result = mysqli_query($conn, $sql);
 
 if ($result === false) {
-    echo "저장에 문제가 생겼습니다. 관리자에게 문의해주세요.";
+    echo "Please contact host to solve the issue";
     echo mysqli_error($conn);
 } else {
     session_start();
@@ -22,7 +22,7 @@ if ($result === false) {
 
 ?>
     <script>
-        alert("회원가입이 완료되었습니다");
+        alert("会員登録が完了しました");
         location.href = "index.php";
         
     </script>

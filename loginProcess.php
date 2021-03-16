@@ -1,45 +1,76 @@
-<?php
-$conn = mysqli_connect("127.0.0.1", "root", "", "member");
 
-//아이디 비교와 비밀번호 비교가 필요한 시점이다.
-// 1차로 DB에서 비밀번호를 가져온다 
-// 평문의 비밀번호와 암호화된 비밀번호를 비교해서 검증한다.
+<?php
+//compare id and password
+
+$conn = mysqli_connect("127.0.0.1", "root", "", "member");
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// DB 정보 가져오기 
+// Bring to DB
 $sql = "SELECT * FROM member WHERE email ='{$email}'";
 $result = mysqli_query($conn, $sql);
 
+// Bring password from DB and compare with hashedPassword
 $row = mysqli_fetch_array($result);
 $hashedPassword = $row['password'];
-$row['email'];
+$row['id'];
 
 foreach($row as $key => $r){
     echo "{$key} : {$r} <br>";
 }
-// echo $row['email'];
-// echo $row['password'];
 
-if ($_POST['email'] == $key && $_POST['password'] == $r ) {
+// Check the both password
+$passwordResult = password_verify($password, $hashedPassword);
+if ($passwordResult === true) {
+    //  login successed case
+    // Save ID to seeesion
     session_start();
-    $_SESSION['userId'] = $row['email'];
+    $_SESSION['userId'] = $row['id'];
     print_r($_SESSION);
     echo $_SESSION['userId'];
     
 ?>
     <script>
-        alert("로그인에 성공하였습니다.")
+        alert("ログイン成功")
         location.href = "index.php";
     </script>
 <?php
 } else {
-    // 로그인 실패 
+    // Login failed case
 ?>
     <script>
-        alert("로그인에 실패하였습니다");
+        alert("ログインできません");
     </script>
 <?php
 }
 ?>
+
+
+
+
+<!-- version2
+<?php
+
+$conn = mysqli_connect("127.0.0.1", "root", "", "member");
+
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+$sql = "SELECT * FROM member WHERE email ='$email'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+
+if ($row != null){
+  $hashedPassword = $row['password'];
+  echo $row['password'];
+  echo  $hashedPassword;
+  if (password_verify($password, $hashedPassword)) {
+
+        session_start();
+        echo "success!";
+        $_SESSION['userId'] = $row['id'];
+        print_r($_SESSION);
+        echo $_SESSION['userId']
+    } else {
+    }
+} ?> -->

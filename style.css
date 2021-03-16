@@ -163,3 +163,16 @@ th {
 th, td {
     min-width: 100px;
 }
+
+
+
+
+/* login page */
+
+.signup__form {
+    visibility: hidden;
+}
+
+.signup__form.active {
+    visibility: visible;
+}

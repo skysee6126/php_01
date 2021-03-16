@@ -1,3 +1,11 @@
+
+<?php
+if($_SESSION()){
+    echo "Wellcome!";
+} else {
+    header("Location: login.php");
+} ?>
+
 <!DOCTYPE html>
 <html lang='ja'>
     <?php include('views/header.inc.php'); ?>
