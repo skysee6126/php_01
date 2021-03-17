@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $sql);
 // Bring password from DB and compare with hashedPassword
 $row = mysqli_fetch_array($result);
 $hashedPassword = $row['password'];
-$row['id'];
+//$row['id'];
 
 foreach($row as $key => $r){
     echo "{$key} : {$r} <br>";
@@ -28,22 +28,19 @@ if ($passwordResult === true) {
     session_start();
     $_SESSION['userId'] = $row['id'];
     $_SESSION['chk_ssid'] = session_id();
-    print_r($_SESSION);
-    echo $_SESSION['userId'];
-    
+    // print_r($_SESSION);
+    // echo $_SESSION['userId'];
+    header("location: index.php");
 ?>
     <script>
         alert("ログイン成功")
-        location.href = "index.php";
+        // location.href = "index.php";
     </script>
 <?php
 } else {
     // Login failed case
-?>
-    <script>
-        alert("ログインできません");
-    </script>
-<?php
+    header("location: login.php");
+    echo "ログインできません";
+
 }
 ?>
-

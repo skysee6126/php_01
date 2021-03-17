@@ -2,34 +2,30 @@
 session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
-
-
 try {
-	$pdo = new PDO("mysql:host=127.0.0.1;dbname=list;charset=utf8", "root", "");
-} catch (PDOExcetion $e) {
-    exit('DbConnectError'.$e->getMessage());
-}
+  $pdo = new PDO("mysql:host=127.0.0.1; dbname=member; charset=utf8", "root", "");
+  //tryの中に入れる
+  $sql = "SELECT * FROM member WHERE email = :email";
+  $stmt = $pdo->prepare($sql);
+  $stmt->bindValue(":email", $email);
+  // $stmt -> bindValue(":password", $password); //たぶん抽出条件にこれ入れたらだめ
+  $stmt->execute();
+  $row = $stmt->fetch();
+  echo $password;
+  print_r( $row(['password']));
 
-$sql = "SELECT * FROM member WHERE email = :email and password = :password";
-$stmt = $pdo->prepare($sql);
-$stmt -> bindValue(":email", $email);
-$stmt -> bindValue(":password", $password);
-$res = $stmt -> execute();
-
-if ($res == false) {
+    //認証処理
+    if(password_verify($password, $row['password'])){
+        print '認証成功';
+    }else{
+        print '認証失敗';
+    }
+    if ($stmt == false) {
     $error = $stmt->errprInfo();
     exit("QueryError:".$error[2]);
 }
-
-$val = $stmt->fetch();
-
-if ($val["id"] != "") {
-    $_SESSION['chk_ssid'] = session_id();
-    $_SESSION['email'] = $val['email'];
-    header("Location: keep.php");
-} else {
-    header("Location: login.php");
+} catch (PDOException $e) {
+    exit('DbConnectError'.$e->getMessage());
 }
-exit();
 
 ?>

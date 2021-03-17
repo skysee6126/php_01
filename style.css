@@ -144,6 +144,34 @@ video { width: 100%; }
 }
 
 
+/* about part */
+.text {
+    width: 50vw;
+    margin: 0 auto;
+    padding-bottom: 5%;
+}
+
+.text span, .partner h2{
+    color: var(--point-color);
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.text_business {
+    text-align: left;
+    padding: 0 5%;
+    width: 60vh;
+    margin-bottom: 15%;
+}
+
+.partner {
+    margin: 5%;
+}
 
 /* menu part */
 
@@ -202,11 +230,9 @@ th {
     background-color: var(--background-color);
 }
 
-th, td {
-    min-width: 100px;
+td {
+    min-width: 50px;
 }
-
-
 
 
 /* login page */
@@ -232,4 +258,26 @@ th, td {
 
 .signup p {
     padding-top: 1rem;
+}
+
+
+.update__title {
+    height: 0;
+}
+.update__form {
+    padding-bottom: 3%;
+}
+
+
+.update__form [type=submit] { 
+    margin: 10px 10px;
+    padding: 4px;
+    background-color: var(--background-color);
+    border: none;
+    border-radius: 0.1px;
+}
+
+.update__form [type=submit]:hover{ 
+    color: white;
+    background-color: var(--point-color);
 }

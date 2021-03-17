@@ -7,7 +7,7 @@
         <p>会員専用ページにアクセスするためにはログインをしてください。</p>
     </div>
     <div class="content">
-        <form method="POST" action="loginProcess.php"> 
+        <form action="loginProcess.php" method="post"> 
         <div class="form">
             <div class="form-email ">
                 <label>Email：</label>
@@ -15,7 +15,7 @@
             </div>
             <div class="form-password">
                 <label>Password：</label>
-                <input name="password" type="password" placeholder="password">
+                <input name="password" type="text" placeholder="password">
             </div>
         
             <button type="submit" class="submit">ログイン</button>
@@ -35,11 +35,11 @@
             </div>
             <div class="form-password">
                 <label>Password：</label>
-                <input name="password" type="password" placeholder="パスワードを記入">
+                <input name="password" type="text" placeholder="パスワードを記入">
             </div>
             <div class="form-cpassword">
                 <label>Confirm Password：</label>
-                <input name="passwordCheck" type="password" placeholder="パスワードを記入">
+                <input name="passwordCheck" type="text" placeholder="パスワードを記入">
             </div>
             <button type="submit" class="submit">会員登録</button>
         </div>

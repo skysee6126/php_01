@@ -10,10 +10,11 @@ $password = mysqli_real_escape_string($conn, $_POST['password']);
 $sql = "SELECT * FROM member WHERE email ='$email'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
+print_r ($row);
 
 if ($row != null){
   $hashedPassword = $row['password'];
-  echo $row['password'];
+  echo $row['password'].'<br>';
   echo  $hashedPassword;
   if (password_verify($password, $hashedPassword)) {
 

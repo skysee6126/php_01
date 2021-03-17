@@ -18,8 +18,8 @@ if ($result === false) {
     session_start();
         $_SESSION['userId'] = $_POST['email'];
         $_SESSION['chk_ssid'] = session_id();
-        print_r($_SESSION);
-        echo $_SESSION['userId'];
+        // print_r($_SESSION);
+        // echo $_SESSION['userId'];
 
 ?>
     <script>
