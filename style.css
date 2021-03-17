@@ -260,6 +260,9 @@ td {
     padding-top: 1rem;
 }
 
+.update {
+    padding: 20%;
+}
 
 .update__title {
     height: 0;

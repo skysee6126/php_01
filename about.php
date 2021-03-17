@@ -36,7 +36,7 @@
         </div>
         <div class="partner">
             <h2>一緒に新しい食生活を作って見ませんか？</h2>
-            <class="text">ビジネス関連のお問合せは<a href="mailto: chooshinhye@gmail.com" title="HOST Mailaddress">ここをクリック</a>してください</p>
+            <class="text">ビジネス関連のお問合せは<a href="mailto:chooshinhye@gmail.com" title="HOST Mailaddress">ここをクリック</a>してください</p>
         </div>
     </div>
         <?php include('views/footer.inc.php'); ?>

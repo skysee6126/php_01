@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang='ja'>
+    <?php include('views/header.inc.php'); ?>
+    <body> 
+
 <?php
 
 
@@ -36,11 +42,18 @@ if(isset($_POST['update'])) // when click on Update button
 }
 ?>
 
-<h3>Update Data</h3>
 
-<form method="POST">
-  <input type="text" name="item" value="<?= $data['item'] ?>" placeholder="Enter" Required>
-  <input type="number" name="quantity" value="<?= $data['quantity'] ?>" placeholder="Enter" Required>
-  <input type="data" name="expiration" value="<?= $data['expiration'] ?>" placeholder="Enter" Required>
-  <input type="submit" name="update" value="Update">
-</form>
+<div class="update">
+<h4 class="update__title">Update Data</h4>
+<div class="update__form">
+    <form method="POST">
+    <input type="text" name="item" value="<?= $data['item'] ?>" placeholder="Enter" Required>
+    <input type="number" name="quantity" value="<?= $data['quantity'] ?>" placeholder="Enter" Required>
+    <input type="data" name="expiration" value="<?= $data['expiration'] ?>" placeholder="Enter" Required>
+    <input type="submit" name="update" value="Update">
+    </form>
+</div>
+</div>
+<?php include('views/footer.inc.php'); ?>
+</body>
+</html>
